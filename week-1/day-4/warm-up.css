@@ -1,0 +1,14 @@
+h1 {
+        text-transform: lowercase;
+        color: turquoise;
+}
+
+h2 {
+        text-align: right;
+
+}
+
+h3 {
+        font-size: 52px;
+        color: white;
+}
