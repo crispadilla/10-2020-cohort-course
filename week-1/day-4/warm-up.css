@@ -1,14 +1,13 @@
 h1 {
-        text-transform: lowercase;
-        color: turquoise;
+  text-transform: lowercase;
+  color: turquoise;
 }
 
 h2 {
-        text-align: right;
-
+  text-align: right;
 }
 
 h3 {
-        font-size: 52px;
-        color: white;
+  font-size: 52px;
+  color: white;
 }
