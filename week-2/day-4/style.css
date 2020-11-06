@@ -1,38 +1,44 @@
-.container {
+* {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  margin: 50px auto;
   width: 800px;
   height: 750px;
 }
+
 .window {
   display: flex;
-  width: 800px;
+  width: 100%;
   height: 95%;
-  background-color: orange;
-  border: 5px solid black;
+}
+
+.sliderContainer {
+  overflow: hidden;
+  width: 80%;
 }
 
 .imageSlider {
-  /* overflow: hidden; */
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 100%;
-  background-color: red;
-  border: 3px solid yellow;
 }
 
 .imageSlider img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  color: white;
 }
 
 button {
   width: 10%;
   height: 100%;
-  background-color: blue;
   cursor: pointer;
+  z-index: 1;
+  background-color: white;
+  border: none;
 }
 
 .arrow {
@@ -62,8 +68,8 @@ button {
 
 .img_indicator {
   margin: 0 20px;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius: 50%;
   background: lightgray;
