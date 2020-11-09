@@ -15,9 +15,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="basicSlider_container">
+      <div class="basicSlider_window">
+        <div class="basicImageSlider">
+          <img class="current-img" src="Alex.jpg" alt="Image 1" />
+
+          <img src="Tommy_Dawn_Wall.jpg" alt="Image 2" />
+          <img src="El_Capitan.jpg" alt="Image 3" />
+          <img src="Half_Dome.jpg" alt="Image 4" />
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="window">
-        <button class="left-btn"><i class="arrow left"></i></button>
+        <button class="left-btn" onclick="prevImage(-1)">
+          <i class="arrow left"></i>
+        </button>
         <div class="sliderContainer">
           <div class="imageSlider">
             <img class="current-img" src="Alex.jpg" alt="Image 1" />
@@ -26,13 +39,15 @@
             <img src="Half_Dome.jpg" alt="Image 4" />
           </div>
         </div>
-        <button class="right-btn"><i class="arrow right"></i></button>
+        <button class="right-btn" onclick="nextImage(1)">
+          <i class="arrow right"></i>
+        </button>
       </div>
       <div class="nav-btns">
-        <button class="img_indicator current-img"></button>
-        <button class="img_indicator"></button>
-        <button class="img_indicator"></button>
-        <button class="img_indicator"></button>
+        <button class="img_indicator" onclick="moveImage(0)"></button>
+        <button class="img_indicator" onclick="moveImage(1)"></button>
+        <button class="img_indicator" onclick="moveImage(2)"></button>
+        <button class="img_indicator" onclick="moveImage(3)"></button>
       </div>
     </div>
     <script src="script.js"></script>

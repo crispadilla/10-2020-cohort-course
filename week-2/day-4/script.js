@@ -1,35 +1,70 @@
 var currentPosition = 0;
 var imageSlider = document.getElementsByClassName("imageSlider")[0];
 var images = document.getElementsByClassName("img_indicator");
-var currentImage = document.getElementsByClassName("current-img")[0];
-var nextImage = document.getElementsByClassName("current-img")[1];
-// var imageWidth = images[0].getBoundingClientRect().width;
-var btnWidth = document.getElementsByClassName("left-btn")[0].width;
-var imageWidth = 640;
+var numImages = images.length;
+var imageIndicators = document.getElementsByClassName("img_indicator");
+var numImgIndicators = imageIndicators.length;
+var shiftAmt = 640;
 var maxShift =
   (document.getElementsByClassName("img_indicator").length - 1) *
-  (imageWidth * -1);
+  (shiftAmt * -1);
+var maxMove = numImgIndicators - 1;
+var positionValues = [];
 
-console.log(maxShift);
+// Populate positionValues array and set up style the
+// image indicator buttons.
+populatePositionArray();
+updateImageIndicator(currentPosition);
 
-let leftButton = document.getElementsByClassName("left-btn")[0];
-var rightButton = document.getElementsByClassName("right-btn")[0];
-
-leftButton.addEventListener("click", function () {
-  if (currentPosition < 0) {
-    currentPosition = currentPosition + imageWidth;
-    imageSlider.style.transform = "translateX(" + currentPosition + "px)";
+function populatePositionArray() {
+  for (var i = 0; i < numImgIndicators; i++) {
+    positionValues[i] = i * shiftAmt * -1;
   }
-  // nextImage.classList.add("current-img");
-  // currentImage.classList.remove("current-img");
-});
+}
 
-rightButton.addEventListener("click", function () {
-  console.log(currentPosition);
-  if (currentPosition > maxShift) {
-    currentPosition = currentPosition - imageWidth;
-    imageSlider.style.transform = "translateX(" + currentPosition + "px)";
+/**  I took inspiration from the W3 School website and
+ * used their approach, as well as some of my own ideas,
+ * to make this carousel work.
+ */
+
+function prevImage(n) {
+  currentPosition == 0 ? null : moveImage((currentPosition += n));
+}
+
+function nextImage(n) {
+  currentPosition == maxMove ? null : moveImage((currentPosition += n));
+}
+
+function moveImage(n) {
+  var newPosition = n;
+  currentPosition = newPosition;
+  updateImageIndicator(newPosition);
+  imageSlider.style.transition = "transform 1.0s ease-in-out";
+  imageSlider.style.transform =
+    "translateX(" + positionValues[newPosition] + "px)";
+  imageSlider.style.t;
+}
+
+function updateImageIndicator(n) {
+  for (var i = 0; i < numImgIndicators; i++) {
+    imageIndicators[i].classList.remove("current-img");
   }
-  // nextImage.classList.add("current-img");
-  // currentImage.classList.remove("current-img");
-});
+  imageIndicators[n].classList.add("current-img");
+}
+
+/** First attempt. It does work with the left and
+ * right arrow buttons, but the approach may not
+ * work with the indicator buttons.
+ */
+// function prevImage(n) {
+//   currentPosition < 0 ? moveImage(n) : moveImage(0);
+// }
+
+// function nextImage(n) {
+//   currentPosition > maxShift ? moveImage(n) : moveImage(0);
+// }
+
+// function moveImage(n) {
+//   currentPosition += n * shiftAmt;
+//   imageSlider.style.transform = "translateX(" + currentPosition + "px)";
+// }
