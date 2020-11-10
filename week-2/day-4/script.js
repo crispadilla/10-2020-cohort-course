@@ -42,7 +42,6 @@ function moveImage(n) {
   imageSlider.style.transition = "transform 1.0s ease-in-out";
   imageSlider.style.transform =
     "translateX(" + positionValues[newPosition] + "px)";
-  imageSlider.style.t;
 }
 
 function updateImageIndicator(n) {
