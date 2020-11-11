@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite", cursive;
+}
+
+h1 {
+  margin: 50px auto;
+  font-size: 5em;
+  text-align: center;
+}
+
+h3,
+div {
+  margin-bottom: 20px;
+  margin-left: 30%;
+}
+
+button,
+input,
+span {
+  width: 9em;
+  height: 2em;
+  margin-right: 1em;
+  text-align: center;
+}
+
+span,
+button {
+  font-weight: 900;
+}
+
+button {
+  background-color: cyan;
+}

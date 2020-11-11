@@ -11,13 +11,21 @@
                                       maximum-scale=1.0, 
                                       user-scalable=no"
     />
-
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Calculator</h1>
+    <h1>Web Calculator</h1>
+    <!-- Addition Div Starts Here -->
     <h3>Enter two numbers to add together</h3>
     <div class="addition">
+      <!-- <button class="add" onclick="arithmetic('add')">Sum</button> -->
+      <!-- <button class="add" onclick="arithmeticOptimized(this)">Sum</button> -->
+      <!-- <button class="add" onclick="arithmeticReoptimized(this)">Sum</button> -->
       <button class="add" onclick="arithmeticPro(this)">Sum</button>
       <input
         type="text"
@@ -35,8 +43,13 @@
       <span> = </span>
       <span id="addResult" class="result"> </span>
     </div>
+    <!-- Addition Div Ends Here -->
+    <!-- Multiplication Div Starts Here -->
     <h3>Enter two numbers to multiply together</h3>
     <div class="multiplication">
+      <!-- <button class="multiply" onclick="arithmetic('multiply')">Multiply</button> -->
+      <!-- <button class="multiply" onclick="arithmeticOptimized(this)">Multiply</button> -->
+      <!-- <button class="multiply" onclick="arithmeticReoptimized(this)">Multiply</button> -->
       <button class="multiply" onclick="arithmeticPro(this)">Multiply</button>
       <input
         type="text"
@@ -54,8 +67,13 @@
       <span> = </span>
       <span id="mulResult" class="result"> </span>
     </div>
+    <!-- Multiplication Div Ends Here -->
+    <!-- Division Div Starts Here -->
     <h3>Enter two numbers to produce the dividend</h3>
     <div class="division">
+      <!-- <button class="divide" onclick="arithmetic('divide')">Divide</button> -->
+      <!-- <button class="divide" onclick="arithmeticOptimized(this)">Divide</button> -->
+      <!-- <button class="divide" onclick="arithmeticReoptimized(this)">Divide</button> -->
       <button class="divide" onclick="arithmeticPro(this)">Divide</button>
       <input
         type="text"
@@ -73,8 +91,13 @@
       <span> = </span>
       <span id="divResult" class="result"> </span>
     </div>
+    <!-- Division Div Ends Here -->
+    <!-- Subtraction Div Starts Here -->
     <h3>Enter two numbers to get the difference</h3>
     <div class="subtraction">
+      <!-- <button class="subtract" onclick="arithmetic('subtract')">Subtract</button> -->
+      <!-- <button class="subtract" onclick="arithmeticOptimized(this)">Subtract</button> -->
+      <!-- <button class="subtract" onclick="arithmeticReoptimized(this)">Subtract</button> -->
       <button class="subtract" onclick="arithmeticPro(this)">Subtract</button>
       <input
         type="text"
@@ -92,6 +115,7 @@
       <span> = </span>
       <span id="subResult" class="result"> </span>
     </div>
+    <!-- Subtraction Div Ends Here -->
     <script src="script.js"></script>
   </body>
 </html>

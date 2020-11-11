@@ -81,7 +81,6 @@ function arithmeticPro(button) {
   var result = eval(
     `parseInt(${leftOp}, 10) ${operand} parseInt(${rightOp}, 10)`
   );
-
   // Print Result
   button.parentElement.getElementsByClassName("result")[0].innerHTML = result;
 }
