@@ -32,12 +32,12 @@ function arithmetic(operation) {
 
 function arithmeticOptimized(button) {
   var result;
-  var leftOp = button.nextElementSibling.value; // left Operand
+  var leftOp = button.nextElementSibling.value;
   var rightOp =
     button.nextElementSibling.nextElementSibling.nextElementSibling.value;
-  var operand = button.nextElementSibling.nextElementSibling.innerHTML;
+  var operator = button.nextElementSibling.nextElementSibling.innerHTML;
 
-  switch (operand) {
+  switch (operator) {
     case "+":
       result = parseInt(leftOp, 10) + parseInt(rightOp, 10);
       break;
@@ -62,10 +62,10 @@ function arithmeticReoptimized(button) {
   var result;
   var leftOp = button.parentElement.getElementsByClassName("leftOp")[0].value;
   var rightOp = button.parentElement.getElementsByClassName("rightOp")[0].value;
-  var operand = button.parentElement.getElementsByClassName("operand")[0]
+  var operator = button.parentElement.getElementsByClassName("operator")[0]
     .innerHTML;
 
-  switch (operand) {
+  switch (operator) {
     case "+":
       result = parseInt(leftOp, 10) + parseInt(rightOp, 10);
       break;
@@ -90,13 +90,13 @@ function arithmeticPro(button) {
   var result;
   var leftOp = button.parentElement.getElementsByClassName("leftOp")[0].value;
   var rightOp = button.parentElement.getElementsByClassName("rightOp")[0].value;
-  var operand = button.parentElement.getElementsByClassName("operand")[0]
+  var operator = button.parentElement.getElementsByClassName("operator")[0]
     .innerHTML;
   // Check division by 0
-  operand == "/" && rightOp == 0
+  operator == "/" && rightOp == 0
     ? (result = "undefined")
     : (result = eval(
-        `parseInt(${leftOp}, 10) ${operand} parseInt(${rightOp}, 10)`
+        `parseInt(${leftOp}, 10) ${operator} parseInt(${rightOp}, 10)`
       ));
   // Print Result
   button.parentElement.getElementsByClassName("result")[0].innerHTML = result;
