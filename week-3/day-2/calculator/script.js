@@ -1,8 +1,9 @@
-// First attempt. We decided to use a create a function that
-// takes a string argument which states the arithmetic operation
-// to be performed. We then use a series of if statements to
-// determine exactly which operation is to be performed and
-// then do the calculation
+// First attempt. We decided to create a function that
+// takes a string argument that states the arithmetic operation
+// to be performed. We then use a series of 'if' statements to
+// determine exactly which operation is to be performed, using
+// the string argument, and then do the calculation.
+// Finally, the result is posted in the result span.
 function arithmetic(operation) {
   var result;
 
@@ -35,14 +36,14 @@ function arithmetic(operation) {
   }
 }
 
-// Out next attempt was to create a function that takes in the element
-// calling it as an argument. Using this element as a reference point,
+// Our next attempt was to create a function that takes in the element
+// calling the function as an argument. Using this element as a reference point,
 // we then used the DOM navigation (nextElementSibling) features to select
 // the appropriate elements and, subsequently, their input values. Finally,
-// we use a switch statement to determine which operation is to be performed
-// and perform it. This approach appears to be an improvement, but
-// it has a huge pitfal since any alteration in the order of the elements
-// in the parent div will break the code.
+// we use a 'switch' statement to determine which operation is to be performed,
+// and perform it. This approach appears to be an improvement from the previous
+// one, but it has a huge pitfal since any alteration in the order of the
+// elements in the parent div will break the code.
 function arithmeticOptimized(button) {
   var result;
   var leftOp = button.nextElementSibling.value;
@@ -73,12 +74,12 @@ function arithmeticOptimized(button) {
 
 // For this approach, we created a function that uses a combination of DOM
 // navigation and element classes. This approach improves on the previous
-// approach in that it no longer is dependent on element order inside the
-// parent div, since the frame of reference now is the parent itself, not
-// the button argument. So, using the parent element and classes we can
-// easily find the required elements and, using the same steps as in the,
-// previous approach, we determine which operation we need to perform and
-// perform it.
+// approach in that it no longer is dependent on the element order inside the
+// parent div anymore since the frame of reference now is the parent itself, not
+// the button argument (child). So, using the parent element and classes we can
+// easily find the necessary elements to perform the operation and, using the
+// same technique with the 'switch' statements as in the previous approachas,
+// we determine which operation we need to perform and perform it.
 function arithmeticReoptimized(button) {
   var result;
   var leftOp = button.parentElement.getElementsByClassName("leftOp")[0].value;
@@ -107,13 +108,13 @@ function arithmeticReoptimized(button) {
   button.parentElement.getElementsByClassName("result")[0].innerHTML = result;
 }
 
-// This is, by far, the simplest approach. We created a function that, just as
-// the previous two approaches, used an element reference to determine which
-// operation needs to be perform, as well as how to obtain the necessary values.
-// The main difference here is that we don't use a switch statement. Instead,
-// we construct a string which represents the operation that needs to be
-// performed and, using the eval( ) function, we evaluate the string as a
-// mathematical expression.
+// This is, by far, the simplest approach. We created a function that, just like
+// in the previous two approaches, used the calling element's parent as a
+// reference to determine which operation needs to be perform, as well as how
+// to obtain the necessary values. The main difference here is that we don't
+// use a switch statement. Instead, we construct a string which represents
+// the operation that needs to be performed and, using the eval( ) function,
+// we evaluate the string as a mathematical expression.
 function arithmeticPro(button) {
   var result;
   var leftOp = button.parentElement.getElementsByClassName("leftOp")[0].value;
