@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="Cris Padilla" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+                                      initial-scale=1.0, 
+                                      maximum-scale=1.0, 
+                                      user-scalable=no"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <h3>Enter two numbers to add together</h3>
+    <div class="addition">
+      <button class="add" onclick="arithmeticPro(this)">Sum</button>
+      <input
+        type="text"
+        name="leftOperand"
+        id="leftOperandAdd"
+        class="leftOp"
+      />
+      <span class="operand">+</span>
+      <input
+        type="text"
+        name="rightOperand"
+        id="rightOperandAdd"
+        class="rightOp"
+      />
+      <span> = </span>
+      <span id="addResult" class="result"> </span>
+    </div>
+    <h3>Enter two numbers to multiply together</h3>
+    <div class="multiplication">
+      <button class="multiply" onclick="arithmeticPro(this)">Multiply</button>
+      <input
+        type="text"
+        name="leftOperand"
+        id="leftOperandMul"
+        class="leftOp"
+      />
+      <span class="operand">*</span>
+      <input
+        type="text"
+        name="rightOperand"
+        id="rightOperandMul"
+        class="rightOp"
+      />
+      <span> = </span>
+      <span id="mulResult" class="result"> </span>
+    </div>
+    <h3>Enter two numbers to produce the dividend</h3>
+    <div class="division">
+      <button class="divide" onclick="arithmeticPro(this)">Divide</button>
+      <input
+        type="text"
+        name="leftOperandDiv"
+        id="leftOperandDiv"
+        class="leftOp"
+      />
+      <span class="operand">/</span>
+      <input
+        type="text"
+        name="rightOperand"
+        id="rightOperandDiv"
+        class="rightOp"
+      />
+      <span> = </span>
+      <span id="divResult" class="result"> </span>
+    </div>
+    <h3>Enter two numbers to get the difference</h3>
+    <div class="subtraction">
+      <button class="subtract" onclick="arithmeticPro(this)">Subtract</button>
+      <input
+        type="text"
+        name="leftOperandSub"
+        id="leftOperandSub"
+        class="leftOp"
+      />
+      <span class="operand">-</span>
+      <input
+        type="text"
+        name="rightOperand"
+        id="rightOperandSub"
+        class="rightOp"
+      />
+      <span> = </span>
+      <span id="subResult" class="result"> </span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
